@@ -1,10 +1,8 @@
 <?php
-// $HeadURL: https://joomgallery.org/svn/joomgallery/JG-2.0/Plugins/JoomDisplayKunenaName/trunk/joomdisplaykunenaname.php $
-// $Id: joomdisplaykunenaname.php 3818 2012-06-30 14:09:03Z chraneco $
 /****************************************************************************************\
 **   Plugin 'JoomDisplayKunenaName' 1.5                                                 **
 **   By: JoomGallery::ProjectTeam                                                       **
-**   Copyright (C) 2010 - 2010 Patrick Alt                                              **
+**   Copyright (C) 2010 - 2015 Patrick Alt; since 2019 JoomGallery::ProjectTeam         **
 **   Released under GNU GPL Public License                                              **
 **   License: http://www.gnu.org/copyleft/gpl.html or have a look                       **
 **   at administrator/components/com_joomgallery/LICENSE.TXT                            **
@@ -44,11 +42,11 @@ class plgJoomGalleryJoomDisplayKunenaName extends JPlugin
    * @return  void
    * @since   1.5
    */
-  function plgJoomGalleryJoomDisplayKunenaName(&$subject, $params)
+  function __construct(&$subject, $params)
   {
     parent::__construct($subject, $params);
 
-    if(!class_exists('KunenaForum') || !KunenaForum::isCompatible('2.0') || !KunenaForum::enabled())
+    if(!class_exists('KunenaForum') || !KunenaForum::isCompatible('4.0') || !KunenaForum::enabled())
     {
       $this->loadLanguage();
       JFactory::getApplication()->enqueueMessage(JText::_('PLG_JOOMDISPLAYKUNENANAME_KUNENA_SEEMS_NOT_TO_BE_INSTALLED'), 'notice');
@@ -68,7 +66,7 @@ class plgJoomGalleryJoomDisplayKunenaName extends JPlugin
    * @return  string  The HTML code created for displaying the user's name
    * @since   1.5
    */
-  function onJoomDisplayUser(&$userId, $realname, $context = null)
+  function onJoomDisplayUser($userId, $realname, $context = null)
   {
     if(!$this->kunena_available)
     {
