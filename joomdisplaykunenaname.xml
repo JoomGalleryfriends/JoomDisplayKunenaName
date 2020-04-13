@@ -2,7 +2,7 @@
 <extension version="3.0" type="plugin" group="joomgallery" method="upgrade">
   <name>PLG_JOOMDISPLAYKUNENANAME</name>
   <author>- 2015 Chraneco; since 2019 JoomGallery::ProjectTeam</author>
-  <creationDate>2020/04/06</creationDate>
+  <creationDate>2020/04/13</creationDate>
   <copyright>Copyright (C) 2011 - 2020 Open Source Matters. All rights reserved.</copyright>
   <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
   <authorUrl>www.joomgalleryfriends.net</authorUrl>
